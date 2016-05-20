@@ -54,6 +54,7 @@ public class MainActivity extends BaseActivity {
 			}
 		});
 		AdUtils.setAD(this);
+		SpotManager.getInstance(this).showSpotAds(this);
 	}
 
 	@Override
