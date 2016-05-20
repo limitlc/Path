@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Path</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_guide">GuideActivity</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="title_activity_succeed_acitivity">SucceedAcitivity</string>
+    <string name="title_activity_failed">FailedActivity</string>
+
+</resources>
