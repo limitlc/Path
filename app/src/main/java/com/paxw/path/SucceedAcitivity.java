@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import net.youmi.android.spot.SpotManager;
-
 public class SucceedAcitivity extends BaseActivity {
   
 	ImageButton backToMenu, restartButton;
@@ -25,13 +23,11 @@ public class SucceedAcitivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_succeed);
-		SpotManager.getInstance(this).showSpotAds(this);
 		backToMenu =  (ImageButton)findViewById(R.id.backToMenu);
 		restartButton = (ImageButton)findViewById(R.id.restart);
 		Animation alwaysTwinkleFastAnimation =AnimationUtils.loadAnimation(
                 SucceedAcitivity.this, R.anim.always_twinkle_fast);
 		restartButton.startAnimation(alwaysTwinkleFastAnimation);
-		
 		Intent durationtimeIntent = getIntent();
 		DURATION = durationtimeIntent.getExtras().getLong("durationtime");
 		System.out.println("+++++++++++++++++++++++++++++++++Duration used "+DURATION);

@@ -18,6 +18,9 @@
         android:theme="@style/AppTheme">
 
 
+        <meta-data android:value="573fe89a67e58e2a71000032" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="update" android:name="UMENG_CHANNEL"/>
+
         <activity android:name=".MainActivity">
 
             <intent-filter>

@@ -15,6 +15,26 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
--keep class com.baidu.bottom.** { *; }
--keep class com.baidu.kirin.** { *; }
--keep class com.baidu.mobstat.** { *; }
+
+#友盟统计的混淆
+-keepclassmembers class * {
+   public <init> (org.json.JSONObject);
+}
+
+#友盟统计  由于有反射机制所以要保证R文件中int不被混淆
+-keep public class com.paxw.path.R$*{
+public static final int *;
+}
+
+#友盟统计 5.0.0sdk版本请添加这个
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+
+#有米sdk
+-dontwarn net.youmi.android.**
+-keep class net.youmi.android.** {
+    *;
+}
