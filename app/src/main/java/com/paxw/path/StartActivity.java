@@ -6,8 +6,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.paxw.path.utils.AdUtils;
-
 public class StartActivity extends BaseActivity {
 
 	ImageButton normal, hard, insane;
@@ -45,7 +43,6 @@ public class StartActivity extends BaseActivity {
 				startActivityForResult(intent1,3);	
 			}
 		});
-		AdUtils.setAD(this);
 	}
 
 	@Override

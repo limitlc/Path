@@ -21,12 +21,14 @@ public class MainActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		//初始化
 		AdManager.getInstance(this).init("178dff7a50e76c8d", "b788d558cbc7f6c6", false);
+		// 设置是否在通知栏显示下载相关提示。默认为true，标识开启；设置为false则关闭。
+		AdManager.setIsDownloadTipsDisplayOnNotification(false);
+		AdManager.setIsInstallationSuccessTipsDisplayOnNotification(false);
+		AdUtils.getOnlineVar(this);
+
 		//预加载插屏
 		SpotManager.getInstance(this).loadSpotAds();
 		super.onCreate(savedInstanceState);
-
-
-
 		setContentView(R.layout.activity_main);
 		
 		guide = (ImageButton)findViewById(R.id.guide);
@@ -53,8 +55,6 @@ public class MainActivity extends BaseActivity {
 				startActivityForResult(intent2,0);
 			}
 		});
-		AdUtils.setAD(this);
-		SpotManager.getInstance(this).showSpotAds(this);
 	}
 
 	@Override

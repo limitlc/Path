@@ -1,6 +1,5 @@
 package com.paxw.path;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -25,7 +24,10 @@ public class FailedActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_failed);
-		SpotManager.getInstance(this).showSpotAds(this);
+		if (openAd){
+			SpotManager.getInstance(this).showSpotAds(this);
+		}
+
 		backToMenu =  (ImageButton)findViewById(R.id.backToMenu);
 		restartButton = (ImageButton)findViewById(R.id.restart);
 		Animation alwaysTwinkleFastAnimation =AnimationUtils.loadAnimation(

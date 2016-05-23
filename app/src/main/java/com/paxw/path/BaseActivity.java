@@ -1,24 +1,30 @@
 package com.paxw.path;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.widget.FrameLayout;
 
-import com.paxw.path.utils.AdUtils;
 import com.paxw.path.utils.StatusBarUtil;
-
-import net.youmi.android.banner.AdSize;
-import net.youmi.android.banner.AdView;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by lichuang on 2016/5/18.
  */
 public class BaseActivity extends Activity {
+    protected boolean openAd = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        int b =  this.getSharedPreferences("onlinevar", Context.MODE_PRIVATE ).getInt("openAd",1);
+        openAd = b == 2 ? true : false;
+    }
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override
