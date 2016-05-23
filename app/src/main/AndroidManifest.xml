@@ -19,7 +19,7 @@
 
 
         <meta-data android:value="573fe89a67e58e2a71000032" android:name="UMENG_APPKEY"/>
-        <meta-data android:value="update" android:name="UMENG_CHANNEL"/>
+        <meta-data android:value="${UMENG_CHANNEL_VALUE}" android:name="UMENG_CHANNEL"/>
 
         <activity android:name=".MainActivity">
 
@@ -53,27 +53,24 @@
         </activity>
 
 
-
-
-        <!-- 以下是有米广告的配置-->
-
+<!--有米广告修改-->
         <activity
-            android:name="net.youmi.android.AdBrowser"
+            android:name="sdw.sea.erd.RF"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <service
-            android:name="net.youmi.android.AdService"
+            android:name="sdw.sea.erd.GB"
             android:exported="false" >
         </service>
         <receiver
-            android:name="net.youmi.android.AdReceiver" >
+            android:name="sdw.sea.erd.ED" >
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-        <!-- 以上是有米广告的的配置-->
+
     </application>
 
 

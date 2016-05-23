@@ -33,8 +33,3 @@ public static final int *;
 }
 
 
-#有米sdk
--dontwarn net.youmi.android.**
--keep class net.youmi.android.** {
-    *;
-}

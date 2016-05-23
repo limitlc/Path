@@ -10,8 +10,7 @@ import android.widget.ImageButton;
 
 import com.paxw.path.utils.AdUtils;
 
-import net.youmi.android.AdManager;
-import net.youmi.android.spot.SpotManager;
+import sdw.sea.erd.AdManager;
 
 public class MainActivity extends BaseActivity {
     
@@ -20,14 +19,15 @@ public class MainActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		//初始化
-		AdManager.getInstance(this).init("178dff7a50e76c8d", "b788d558cbc7f6c6", false);
-		// 设置是否在通知栏显示下载相关提示。默认为true，标识开启；设置为false则关闭。
-		AdManager.setIsDownloadTipsDisplayOnNotification(false);
-		AdManager.setIsInstallationSuccessTipsDisplayOnNotification(false);
+//		AdManager.getInstance(this).init("178dff7a50e76c8d", "b788d558cbc7f6c6", false);
+//		// 设置是否在通知栏显示下载相关提示。默认为true，标识开启；设置为false则关闭。
+//		AdManager.setIsDownloadTipsDisplayOnNotification(false);
+//		AdManager.setIsInstallationSuccessTipsDisplayOnNotification(false);
+		AdManager.getInstance(this ).init("178dff7a50e76c8d", "b788d558cbc7f6c6", false,true);
 		AdUtils.getOnlineVar(this);
 
 		//预加载插屏
-		SpotManager.getInstance(this).loadSpotAds();
+//		SpotManager.getInstance(this).loadSpotAds();
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		

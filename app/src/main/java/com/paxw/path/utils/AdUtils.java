@@ -4,13 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import net.youmi.android.AdManager;
-import net.youmi.android.banner.AdSize;
-import net.youmi.android.banner.AdView;
-import net.youmi.android.onlineconfig.OnlineConfigCallBack;
+import sdw.sea.erd.AdManager;
+import sdw.sea.erd.normal.banner.BannerManager;
+import sdw.sea.erd.onlineconfig.OnlineConfigCallBack;
+
+//import net.youmi.android.AdManager;
+//import net.youmi.android.banner.AdSize;
+//import net.youmi.android.banner.AdView;
+//import net.youmi.android.onlineconfig.OnlineConfigCallBack;
 
 /**
  * Created by lichuang on 2016/5/18.
@@ -24,15 +29,14 @@ public class AdUtils {
         layoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT; // 这里示例为右下角
 
         // 实例化广告条
-        AdView adView = new AdView(context, AdSize.FIT_SCREEN);
-
+        View adView = BannerManager.getInstance(context).getBanner(context);
         // 调用 Activity 的 addContentView 函数
         context.addContentView(adView, layoutParams);
     }
 
     public static void setAdInViewGroup(Activity context,LinearLayout adLayout){
 
-        AdView adView = new AdView(context, AdSize.FIT_SCREEN);
+        View adView = BannerManager.getInstance(context).getBanner(context);
         adLayout.addView(adView);
     }
 

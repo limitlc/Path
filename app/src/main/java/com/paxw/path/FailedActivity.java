@@ -11,7 +11,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import net.youmi.android.spot.SpotManager;
+import sdw.sea.erd.normal.spot.SpotManager;
+
 
 public class FailedActivity extends BaseActivity {
 
@@ -27,7 +28,7 @@ public class FailedActivity extends BaseActivity {
 		if (openAd){
 			SpotManager.getInstance(this).showSpotAds(this);
 		}
-
+//		SpotManager.getInstance(this).showSpotAds(this);
 		backToMenu =  (ImageButton)findViewById(R.id.backToMenu);
 		restartButton = (ImageButton)findViewById(R.id.restart);
 		Animation alwaysTwinkleFastAnimation =AnimationUtils.loadAnimation(

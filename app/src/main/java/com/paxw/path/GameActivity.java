@@ -21,7 +21,6 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import com.paxw.path.utils.AdUtils;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -102,6 +101,10 @@ public class GameActivity extends BaseActivity {
 					}
 				};
 				timer.schedule(task, delay);
+
+//				Message message = new Message();
+//				message.what = 1;
+//				handler.sendMessage(message);
 
 			}
 		});
